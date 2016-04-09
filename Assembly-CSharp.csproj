@@ -51,6 +51,7 @@
      <Compile Include="Assets\code\ball.cs" />
      <Compile Include="Assets\code\bloque.cs" />
      <Compile Include="Assets\code\botonSalir.cs" />
+     <Compile Include="Assets\code\elementosInteractivo.cs" />
      <Compile Include="Assets\code\empezarPartida.cs" />
      <Compile Include="Assets\code\plano.cs" />
      <Compile Include="Assets\code\puntos.cs" />

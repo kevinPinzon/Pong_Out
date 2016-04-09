@@ -8,6 +8,7 @@ public class ball : MonoBehaviour {
     Rigidbody rig;
     Vector3 posicionInicial;
     public Transform barra;
+    public elementosInteractivo pantalla;
 
 
     void Awake()
@@ -36,7 +37,7 @@ public class ball : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!enJuego && Input.GetButtonDown("Fire1"))
+        if (!enJuego && (Input.GetButtonDown("Fire1") || pantalla.pulsado))
         {
             enJuego = true;
             transform.SetParent(null);

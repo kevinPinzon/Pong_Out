@@ -3,6 +3,9 @@ using System.Collections;
 
 public class Barra : MonoBehaviour {
 
+    public elementosInteractivo botonIz;
+    public elementosInteractivo botonDe;
+
     public float velocidad = 0.4f;
     Vector3 posicionInicial;
 
@@ -17,8 +20,19 @@ public class Barra : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float tecladoHorizontal = Input.GetAxisRaw("Horizontal");
-        float posX = transform.position.x + (tecladoHorizontal *velocidad*Time.deltaTime);
+        float direccion;
+        if (botonIz.pulsado)
+        {
+            direccion = -1;
+        }else if (botonDe.pulsado)
+        {
+            direccion = 1;
+        }else
+        {
+            direccion = Input.GetAxisRaw("Horizontal"); 
+        }
+
+        float posX = transform.position.x + (direccion *velocidad*Time.deltaTime);
         if (posX < -7.84) posX = -7.84f;
         if (posX > 8) posX = 8f;
         transform.position = new Vector3(posX, transform.position.y, transform.position.z);
